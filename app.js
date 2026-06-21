@@ -31,6 +31,7 @@ function modeChip(mode, color){ return `<span class="tl-mode" style="background:
 const NAV_TABS = { home:'home', pass:'pass', explore:'explore', profile:'profile', planner:'planner' };
 
 const screens = {};
+let tgId = 0; // toggle id counter (used by rowToggle while screens are built)
 
 /* 1 ── SPLASH ─────────────────────────────────────────────────────── */
 screens.splash = { nav:false, dark:true, noStatus:false, html:`
@@ -630,7 +631,6 @@ function rowLink(ic,label,val,act){
     <div class="body"><b>${label}</b></div>
     <span class="small muted">${val||''}</span>${I.chev}</div>`;
 }
-let tgId=0;
 function rowToggle(ic,label,on){
   const id='tg'+(tgId++);
   return `<div class="list-item">
